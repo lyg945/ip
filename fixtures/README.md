@@ -105,3 +105,13 @@ peer chaincode invoke -o orderer.paat.com:7050 --tls --cafile /opt/gopath/src/gi
 peer chaincode query -C $CHANNEL_NAME -n mycc -c '{"Args":["query","a"]}'
 
 执行成功输出结果: 90
+
+
+
+Solving failure: unable to deduce repository and source type for "golang.org/x/crypto": unable to read metadata: unable to fetch raw metadata: failed HTTP request to URL "http://golang.org/x/crypto?go-get=1": Get http://golang.org/x/crypto?go-get=1: dial tcp 216.239.37.1:80: i/o timeout
+make: *** [build] Error 1
+
+http://www.mayanpeng.cn/archives/112.html
+
+https://goproxy.io/
+source ~/.bash_profile
