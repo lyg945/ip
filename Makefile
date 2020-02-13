@@ -14,12 +14,12 @@ build:
 ##### ENV
 env-up:
 	@echo "Start environment ..."
-	@cd fixtures && docker-compose up --force-recreate -d
+	@cd fixtures && docker-compose-cli up --force-recreate -d
 	@echo "Environment up"
 
 env-down:
 	@echo "Stop environment ..."
-	@cd fixtures && docker-compose down
+	@cd fixtures && docker-compose-cli down
 	@echo "Environment down"
 
 ##### RUN
