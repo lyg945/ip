@@ -1,3 +1,5 @@
+sudo chown -R stack:stack ./fixtures
+
 删除证书目录：
 rm -Rf crypto-config channel-artifacts
 生成证书： 
