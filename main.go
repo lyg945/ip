@@ -25,7 +25,7 @@ func main() {
 	initInfo := &sdkInit.InitInfo{
 
 		ChannelID: "ipChannel",
-		ChannelConfig: os.Getenv("GOPATH") + "/src/github.com/paat.com/ip/fixtures/artifacts/channel.tx",
+		ChannelConfig: os.Getenv("GOPATH") + "/src/github.com/paat.com/ip/fixtures/channel-artifacts/channel.tx",
 
 		OrgAdmin:"Admin",
 		OrgName:"Org1",
