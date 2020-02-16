@@ -25,7 +25,7 @@ env-down:
 ##### RUN
 run:
 	@echo "Start app ..."
-	@./education
+	@./ip
 
 ##### CLEAN
 clean: env-down
