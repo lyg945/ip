@@ -1,4 +1,6 @@
 sudo chown -R stack:stack ./fixtures
+sudo chown -R liuyonggang:staff fixtures
+export PATH=/home/stack/go/src/github.com/hyperledger/fabric-samples/bin:$PATH
 
 删除证书目录：
 rm -Rf crypto-config channel-artifacts
@@ -12,7 +14,7 @@ configtxgen -profile TwoOrgsOrdererGenesis -outputBlock channel-artifacts/genesi
 
 创建通道
 echo $CHANNEL_NAME
-export CHANNEL_NAME=ipChannel
+export CHANNEL_NAME=ipchannel
 configtxgen -profile TwoOrgsChannel -outputCreateChannelTx channel-artifacts/channel.tx -channelID $CHANNEL_NAME
 
 生成锚节点
@@ -29,7 +31,7 @@ docker-compose -f docker-compose-cli.yaml down
 进入 Docker cli 容器
 docker exec -it cli bash
 echo $CHANNEL_NAME
-export CHANNEL_NAME=ipChannel
+export CHANNEL_NAME=ipchannel
 peer channel create -o orderer.paat.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls true  --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/paat.com/orderers/orderer.paat.com/msp/tlscacerts/tlsca.paat.com-cert.pem
 参数说明:
 -o： 指定 orderer 节点的地址
@@ -39,7 +41,7 @@ peer channel create -o orderer.paat.com:7050 -c $CHANNEL_NAME -f ./channel-artif
 --cafile： 指定 TLS_CA 证书的所在路径
 
 应用通道所包含组织的成员节点可以加入通道中
- peer channel join -b ipChannel.block
+ peer channel join -b ipchannel.block
 
 join命令： 将本 Peer 节点加入到应用通道中
 参数说明：
